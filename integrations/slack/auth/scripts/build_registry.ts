@@ -1,0 +1,40 @@
+// scripts/build-registry.ts
+import fs from 'fs/promises'
+import path from 'path'
+import yaml from 'js-yaml'
+
+async function loadIntegration(dir: string) {
+  const integrationYamlPath = path.join(dir, 'integration.yaml')
+  const raw = await fs.readFile(integrationYamlPath, 'utf8')
+  const integration = yaml.load(raw) as any
+
+  const tasksDir = path.join(dir, 'tasks')
+  const eventsDir = path.join(dir, 'events')
+
+  const taskFiles = (await fs.readdir(tasksDir).catch(() => []))
+  const eventFiles = (await fs.readdir(eventsDir).catch(() => []))
+
+  return {
+    id: integration.id,
+    name: integration.name,
+    version: integration.version,
+    icon: integration.icon,
+    category: integration.category,
+    tasks: taskFiles.map((file) => ({ id: file.replace('.task.yaml', '') })),
+    events: eventFiles.map((file) => ({ id: file.replace('.event.yaml', '') })),
+  }
+}
+
+async function main() {
+  const root = path.resolve('integrations')
+  const dirs = await fs.readdir(root)
+  const registry = await Promise.all(
+    dirs.map((d) => loadIntegration(path.join(root, d)))
+  )
+  await fs.writeFile('registry.json', JSON.stringify(registry, null, 2))
+}
+
+main().catch((err) => {
+  console.error(err)
+  process.exit(1)
+})
