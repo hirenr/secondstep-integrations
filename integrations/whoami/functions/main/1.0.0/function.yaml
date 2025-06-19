@@ -11,6 +11,7 @@ input:
 call: http
 with:
   endpoint:
-    uri: https://whoami.local.hiren.ruchandani.com
+    uri: https://protected-httpbin.local.hiren.ruchandani.com/anything
   headers:
     Authorization: '${ "Bearer " + .authToken }'
+    Testing: FooBar
