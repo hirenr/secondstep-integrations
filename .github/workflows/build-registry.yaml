@@ -32,7 +32,7 @@ jobs:
         run: yarn install
 
       - name: Build registry.json
-        run: node scripts/build-registry.ts
+        run: yarn tsx scripts/build-registry.ts
 
       - name: Commit registry.json if changed
         run: |
