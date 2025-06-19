@@ -11,5 +11,18 @@
       }
     ],
     "events": []
+  },
+  {
+    "id": "whoami",
+    "name": "WhoAmI",
+    "version": "0.0.1",
+    "category": "testing",
+    "tasks": [
+      {
+        "id": "main",
+        "version": "1.0.0"
+      }
+    ],
+    "events": []
   }
 ]
