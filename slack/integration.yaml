@@ -5,6 +5,10 @@ category: messaging
 description: Send and receive messages in Slack
 icon: https://cdn.secondstep.app/icons/slack.svg
 
+tags:
+  - communication
+  - messaging
+
 auth:
   $ref: ./auth/oauth2.yaml
 
