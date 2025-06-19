@@ -1,1 +1,22 @@
+id: slack
+name: Slack
+version: 0.0.1
+category: messaging
+description: Send and receive messages in Slack
+icon: https://cdn.secondstep.app/icons/slack.svg
 
+auth:
+  $ref: ./auth/oauth2.yaml
+
+# connectionSchema:
+#   type: object
+#   properties:
+#     teamName:
+#       type: string
+#   required: [teamName]
+
+# events:
+#   - $ref: ./events/message_received.event.yaml
+
+functions:
+  - $ref: ./functions/send_message/0.0.1/function.yaml
