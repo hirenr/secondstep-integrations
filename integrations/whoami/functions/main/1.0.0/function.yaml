@@ -1,10 +1,12 @@
 input:
   schema:
-    type: object
-    properties:
-      authToken:
-        type: string
-    required: ['authToken']
+    format: json
+    document:
+      type: object
+      properties:
+        authToken:
+          type: string
+      required: ['authToken']
     
 call: http
 with:
