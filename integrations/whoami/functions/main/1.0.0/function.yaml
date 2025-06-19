@@ -1,0 +1,4 @@
+call: http
+with:
+  endpoint:
+    uri: https://whoami.local.hiren.ruchandani.com

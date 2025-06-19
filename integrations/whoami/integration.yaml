@@ -1,0 +1,21 @@
+id: whoami
+name: WhoAmI
+version: 0.0.1
+category: testing
+description: Test WhoAmI access
+
+# auth:
+#   $ref: ./auth/oauth2.yaml
+
+# connectionSchema:
+#   type: object
+#   properties:
+#     teamName:
+#       type: string
+#   required: [teamName]
+
+# events:
+#   - $ref: ./events/message_received.event.yaml
+
+functions:
+  - $ref: ./functions/main/1.0.0/function.yaml
