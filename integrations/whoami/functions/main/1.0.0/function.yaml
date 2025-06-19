@@ -1,4 +1,14 @@
+input:
+  schema:
+    type: object
+    properties:
+      authToken:
+        type: string
+    required: ['authToken']
+    
 call: http
 with:
   endpoint:
     uri: https://whoami.local.hiren.ruchandani.com
+    headers:
+      Authorization: '${ "Bearer " + .authToken }'
