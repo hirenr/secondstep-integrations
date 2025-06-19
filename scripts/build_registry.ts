@@ -2,16 +2,16 @@
 import fs from 'fs/promises'
 import path from 'path'
 import yaml from 'js-yaml'
+import glob from 'fast-glob'
 
 async function loadIntegration(dir: string) {
   const integrationYamlPath = path.join(dir, 'integration.yaml')
   const raw = await fs.readFile(integrationYamlPath, 'utf8')
   const integration = yaml.load(raw) as any
 
-  const tasksDir = path.join(dir, 'tasks')
   const eventsDir = path.join(dir, 'events')
 
-  const taskFiles = (await fs.readdir(tasksDir).catch(() => []))
+  const functionPaths = await glob('functions/*/*/function.yaml', { cwd: dir })
   const eventFiles = (await fs.readdir(eventsDir).catch(() => []))
 
   return {
@@ -20,7 +20,13 @@ async function loadIntegration(dir: string) {
     version: integration.version,
     icon: integration.icon,
     category: integration.category,
-    tasks: taskFiles.map((file) => ({ id: file.replace('.task.yaml', '') })),
+    tasks: functionPaths.map((file) => {
+      const parts = file.split('/')
+      return {
+        id: parts[1], // functionName
+        version: parts[2] // version
+      }
+    }),
     events: eventFiles.map((file) => ({ id: file.replace('.event.yaml', '') })),
   }
 }

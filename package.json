@@ -1,0 +1,14 @@
+{
+  "name": "secondstep-integrations",
+  "packageManager": "yarn@4.6.0",
+  "type": "module",
+  "dependencies": {
+    "fast-glob": "^3.3.3",
+    "js-yaml": "^4.1.0"
+  },
+  "devDependencies": {
+    "@types/js-yaml": "^4.0.9",
+    "@types/node": "^24.0.3",
+    "tsx": "^4.20.3"
+  }
+}

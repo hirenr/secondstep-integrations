@@ -24,8 +24,12 @@ jobs:
         with:
           node-version: 20
 
+      - name: Set up Yarn v4
+        run: |
+          corepack enable
+          yarn set version stable
       - name: Install dependencies
-        run: npm install
+        run: yarn install
 
       - name: Build registry.json
         run: node scripts/build-registry.ts

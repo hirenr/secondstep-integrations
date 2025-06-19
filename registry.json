@@ -1,0 +1,15 @@
+[
+  {
+    "id": "slack",
+    "name": "Slack",
+    "version": "0.0.1",
+    "category": "messaging",
+    "tasks": [
+      {
+        "id": "send_message",
+        "version": "0.0.1"
+      }
+    ],
+    "events": []
+  }
+]
