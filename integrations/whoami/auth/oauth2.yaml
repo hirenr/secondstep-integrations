@@ -1,0 +1,10 @@
+authority: https://auth.local.hiren.ruchandani.com
+endpoints:
+  token: /token
+grant: urn:ietf:params:oauth:grant-type:token-exchange
+client:
+  id: $CLIENT_ID
+  secret: $CLIENT_SECRET
+subject:
+  token: $ACCESS_TOKEN
+  type: urn:ietf:params:oauth:token-type:access_token
