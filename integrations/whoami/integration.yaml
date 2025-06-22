@@ -1,4 +1,4 @@
-id: whoami
+id: app.secondstep.integration.whoami
 name: WhoAmI
 version: 0.0.1
 category: testing
