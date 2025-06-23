@@ -12,6 +12,9 @@ call: http
 with:
   endpoint:
     uri: https://protected-httpbin.local.hiren.ruchandani.com/anything
+    authentication:
+      oauth2:
+        use: "app.secondstep.integration.whoami"
   headers:
     Authorization: '${ "Bearer " + .authToken }'
     Testing: FooBar
