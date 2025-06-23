@@ -1,10 +1,8 @@
 authority: https://auth.local.hiren.ruchandani.com
 endpoints:
   token: /token
-grant: urn:ietf:params:oauth:grant-type:token-exchange
+grant: refresh_token
 client:
   id: ${ .client_id }
   secret: ${ .client_secret }
-subject:
-  token: ${ .access_token }
-  type: urn:ietf:params:oauth:token-type:access_token
+refresh_token: ${ .refresh_token }
