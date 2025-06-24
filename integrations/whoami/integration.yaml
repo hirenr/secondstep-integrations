@@ -7,6 +7,13 @@ description: Test WhoAmI access
 auth:
   $ref: ./auth/bearer.yaml
 
+authTest:
+  type: 'oauth'
+  config:
+    $ref: ./auth/oauth2.yaml
+  secret:
+    $ref: ./auth/bearer.yaml
+
 # connectionSchema:
 #   type: object
 #   properties:
