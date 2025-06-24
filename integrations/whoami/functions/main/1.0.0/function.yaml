@@ -15,6 +15,6 @@ with:
     authentication:
       bearer:
         use: "app.secondstep.integration.whoami"
-  # headers:
+  headers:
   #   Authorization: '${ "Bearer " + .authToken }'
-  #   Testing: FooBar
+    Testing: FooBar
