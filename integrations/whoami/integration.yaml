@@ -5,7 +5,7 @@ category: testing
 description: Test WhoAmI access
 
 auth:
-  $ref: ./auth/oauth2.yaml
+  $ref: ./auth/bearer.yaml
 
 # connectionSchema:
 #   type: object
