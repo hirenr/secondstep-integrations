@@ -2,6 +2,9 @@ authority: https://auth.local.hiren.ruchandani.com
 endpoints:
   token: /token
 grant: authorization_code
+scopes:
+  - openid
+  - offline_access
 client:
   id: ${ .client_id }
   secret: ${ .client_secret }
