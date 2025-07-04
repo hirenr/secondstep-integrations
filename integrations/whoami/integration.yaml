@@ -4,9 +4,6 @@ version: 0.0.1
 category: testing
 description: Test WhoAmI access
 
-# auth:
-#   $ref: ./auth/bearer.yaml
-
 auth:
   type: 'oauth'
   config:
