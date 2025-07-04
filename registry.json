@@ -1,0 +1,28 @@
+[
+  {
+    "id": "slack",
+    "name": "Slack",
+    "version": "0.0.1",
+    "category": "messaging",
+    "tasks": [
+      {
+        "id": "send_message",
+        "version": "0.0.1"
+      }
+    ],
+    "events": []
+  },
+  {
+    "id": "app.secondstep.integration.whoami",
+    "name": "WhoAmI",
+    "version": "0.0.1",
+    "category": "testing",
+    "tasks": [
+      {
+        "id": "main",
+        "version": "1.0.0"
+      }
+    ],
+    "events": []
+  }
+]

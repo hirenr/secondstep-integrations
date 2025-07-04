@@ -1,0 +1,25 @@
+id: app.secondstep.integration.whoami
+name: WhoAmI
+version: 0.0.1
+category: testing
+description: Test WhoAmI access
+
+auth:
+  type: 'oauth'
+  config:
+    $ref: ./auth/oauth2.yaml
+  secret:
+    $ref: ./auth/bearer.yaml
+
+# connectionSchema:
+#   type: object
+#   properties:
+#     teamName:
+#       type: string
+#   required: [teamName]
+
+# events:
+#   - $ref: ./events/message_received.event.yaml
+
+functions:
+  - $ref: ./functions/main/1.0.0/function.yaml

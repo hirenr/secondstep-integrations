@@ -1,0 +1,10 @@
+authority: https://auth.local.hiren.ruchandani.com
+endpoints:
+  authorization: /auth
+grant: authorization_code
+scope: 
+  - openid
+  - offline_access
+client:
+  id: ${ .client_id }
+  secret: ${ .client_secret }

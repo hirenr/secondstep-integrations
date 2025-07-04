@@ -1,0 +1,29 @@
+# function.yaml
+input:
+  schema:
+    type: object
+    properties:
+      channel:
+        type: string
+        description: The Slack channel ID where the message will be sent.
+      text:
+        type: string
+        description: The message text to send.
+    required: [channel, text]
+output:
+  schema:
+    type: object
+    properties:
+      ok:
+        type: boolean
+      ts:
+        type: string
+      message:
+        type: object
+call: http
+with:
+  endpoint: 
+    uri: https://slack.com/api/chat.postMessage
+    authentication:
+      bearer:
+        token: 12345
