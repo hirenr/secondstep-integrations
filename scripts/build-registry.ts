@@ -38,7 +38,9 @@ async function main() {
   const registry = await Promise.all(
     dirs.map((d) => loadIntegration(path.join(root, d), d))
   )
+
   await fs.writeFile('registry.json', JSON.stringify(registry, null, 2))
+  await fs.writeFile('registry.yaml', yaml.dump(registry))
 }
 
 main().catch((err) => {
