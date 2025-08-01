@@ -1,0 +1,18 @@
+- id: slack
+  name: Slack
+  uri: integrations/slack/integration.yaml
+  version: 0.0.1
+  category: messaging
+  tasks:
+    - id: send_message
+      version: 0.0.1
+  events: []
+- id: app.secondstep.integration.whoami
+  name: WhoAmI
+  uri: integrations/whoami/integration.yaml
+  version: 0.0.1
+  category: testing
+  tasks:
+    - id: main
+      version: 1.0.0
+  events: []
