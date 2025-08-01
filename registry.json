@@ -2,6 +2,7 @@
   {
     "id": "slack",
     "name": "Slack",
+    "uri": "/home/runner/work/secondstep-integrations/secondstep-integrations/integrations/slack",
     "version": "0.0.1",
     "category": "messaging",
     "tasks": [
@@ -15,6 +16,7 @@
   {
     "id": "app.secondstep.integration.whoami",
     "name": "WhoAmI",
+    "uri": "/home/runner/work/secondstep-integrations/secondstep-integrations/integrations/whoami",
     "version": "0.0.1",
     "category": "testing",
     "tasks": [
