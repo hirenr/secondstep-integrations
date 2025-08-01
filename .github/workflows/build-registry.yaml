@@ -51,7 +51,7 @@ jobs:
         run: |
           mkdir -p dist-pages
           cp -r integrations dist-pages/
-          cp registry.json dist-pages/
+          cp registry.yaml dist-pages/
 
       - name: Upload registry.json to GitHub Pages
         uses: actions/upload-pages-artifact@v3
