@@ -4,7 +4,7 @@ import path from 'path'
 import yaml from 'js-yaml'
 import glob from 'fast-glob'
 
-async function loadIntegration(integrationPath: string) {
+async function loadIntegration(integrationPath: string, dirName: string) {
   const integrationYamlPath = path.join(integrationPath, 'integration.yaml')
   const raw = await fs.readFile(integrationYamlPath, 'utf8')
   const integration = yaml.load(raw) as any
@@ -17,7 +17,7 @@ async function loadIntegration(integrationPath: string) {
   return {
     id: integration.id,
     name: integration.name,
-    uri: integrationPath,
+    uri: `integrations/${dirName}/integration.yaml`,
     version: integration.version,
     icon: integration.icon,
     category: integration.category,
@@ -36,7 +36,7 @@ async function main() {
   const root = path.resolve('integrations')
   const dirs = await fs.readdir(root)
   const registry = await Promise.all(
-    dirs.map((d) => loadIntegration(path.join(root, d)))
+    dirs.map((d) => loadIntegration(path.join(root, d), d))
   )
   await fs.writeFile('registry.json', JSON.stringify(registry, null, 2))
 }
